@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Compliance Dashboard - FedRAMP/GovRAMP/TX-RAMP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-shield-alt logo-icon" aria-hidden="true"></i>
+                    <h1 class="logo-text">Continuous Monitoring</h1>
+                </div>
+                <nav class="nav-links" role="navigation" aria-label="Main navigation">
+                    <a href="index.html" class="nav-link active" aria-current="page">
+                        <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+                        Dashboard
+                    </a>
+                    <a href="assets.html" class="nav-link">
+                        <i class="fas fa-server" aria-hidden="true"></i>
+                        Assets
+                    </a>
+                    <a href="vulnerabilities.html" class="nav-link">
+                        <i class="fas fa-bug" aria-hidden="true"></i>
+                        Vulnerabilities
+                    </a>
+                    <a href="poam.html" class="nav-link">
+                        <i class="fas fa-tasks" aria-hidden="true"></i>
+                        POA&amp;M
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" role="main">
+        <div class="container">
+            <!-- Dashboard Section -->
+            <section class="content-section active" aria-labelledby="dashboard-title">
+                <div class="section-header">
+                    <h2 id="dashboard-title" class="section-title">Compliance Overview</h2>
+                    <div class="section-actions">
+                        <button class="btn btn-primary" id="refresh-dashboard" aria-label="Refresh dashboard data">
+                            <i class="fas fa-sync-alt" aria-hidden="true"></i>
+                            Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Compliance Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3 class="metric-title">Overall Compliance</h3>
+                            <i class="fas fa-check-circle metric-icon success" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-value">
+                            <span class="loading-placeholder" aria-label="Loading compliance data">--</span>
+                        </div>
+                        <div class="metric-label">FedRAMP Ready</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3 class="metric-title">Critical Findings</h3>
+                            <i class="fas fa-exclamation-triangle metric-icon critical" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-value">
+                            <span class="loading-placeholder" aria-label="Loading critical findings">--</span>
+                        </div>
+                        <div class="metric-label">Requiring Immediate Action</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3 class="metric-title">Assets Monitored</h3>
+                            <i class="fas fa-server metric-icon primary" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-value">
+                            <span class="loading-placeholder" aria-label="Loading asset count">--</span>
+                        </div>
+                        <div class="metric-label">Across All Environments</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3 class="metric-title">Open POA&amp;Ms</h3>
+                            <i class="fas fa-tasks metric-icon warning" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-value">
+                            <span class="loading-placeholder" aria-label="Loading POA&amp;M count">--</span>
+                        </div>
+                        <div class="metric-label">Active Remediation Items</div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Security Events</h3>
+                            <button class="btn-icon" aria-label="View all security events">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="event-list">
+                                <div class="empty-state">
+                                    <i class="fas fa-shield-alt empty-icon" aria-hidden="true"></i>
+                                    <p class="empty-message">No recent security events</p>
+                                    <p class="empty-description">Connect your security monitoring systems to view events</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Compliance Status</h3>
+                            <button class="btn-icon" aria-label="View detailed compliance report">
+                                <i class="fas fa-chart-bar" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="card-content">
+                            <div class="compliance-list">
+                                <div class="empty-state">
+                                    <i class="fas fa-clipboard-check empty-icon" aria-hidden="true"></i>
+                                    <p class="empty-message">No compliance data available</p>
+                                    <p class="empty-description">Configure compliance monitoring to view status</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="footer-text">
+                Continous Monitoring Dashboard for FedRAMP/GovRAMP/TX-RAMP
+                <span class="footer-separator">|</span>
+                <span>Last updated: Not connected</span>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

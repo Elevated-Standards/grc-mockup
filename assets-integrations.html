@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cloud Integrations</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/main.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <i
+                            class="fas fa-shield-alt logo-icon"
+                            aria-hidden="true"
+                        ></i>
+                        <h1 class="logo-text">Continuous Monitoring</h1>
+                    </div>
+                    <nav
+                        class="nav-links"
+                        role="navigation"
+                        aria-label="Main navigation"
+                    >
+                        <a href="index.html" class="nav-link">
+                            <i
+                                class="fas fa-tachometer-alt"
+                                aria-hidden="true"
+                            ></i>
+                            Dashboard
+                        </a>
+                        <a
+                            href="assets.html"
+                            class="nav-link active"
+                            aria-current="page"
+                        >
+                            <i class="fas fa-server" aria-hidden="true"></i>
+                            Assets
+                        </a>
+                        <a href="vulnerabilities.html" class="nav-link">
+                            <i class="fas fa-bug" aria-hidden="true"></i>
+                            Vulnerabilities
+                        </a>
+                        <a href="poam.html" class="nav-link">
+                            <i class="fas fa-tasks" aria-hidden="true"></i>
+                            POA&amp;M
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" role="main">
+            <div class="container">
+                <div class="full-page-view">
+                    <div class="page-header">
+
+                        <h1 class="page-title">Cloud Integrations</h1>
+                    </div>
+                    <div class="page-content">
+                        <!-- Assets Sidebar Menu -->
+                        <div class="section-sidebar">
+                            <div class="sidebar-menu">
+                                <h3 class="sidebar-title">Asset Management</h3>
+                                <nav class="sidebar-nav">
+                                    <a href="assets.html" class="sidebar-link">
+                                        <i
+                                            class="fas fa-list"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Inventory Overview
+                                    </a>
+                                    <a
+                                        href="assets-discovery.html"
+                                        class="sidebar-link"
+                                    >
+                                        <i
+                                            class="fas fa-search"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Asset Discovery
+                                    </a>
+                                    <a
+                                        href="assets-compliance.html"
+                                        class="sidebar-link"
+                                    >
+                                        <i
+                                            class="fas fa-shield-alt"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Compliance Status
+                                    </a>
+                                    <a
+                                        href="assets-reports.html"
+                                        class="sidebar-link"
+                                    >
+                                        <i
+                                            class="fas fa-chart-bar"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Asset Reports
+                                    </a>
+                                    <a
+                                        href="assets-integrations.html"
+                                        class="sidebar-link active"
+                                    >
+                                        <i
+                                            class="fas fa-plug"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Cloud Integrations
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- Cloud Integrations Content -->
+                        <div class="table-container">
+                            <div class="empty-state">
+                                <i
+                                    class="fas fa-plug empty-icon"
+                                    aria-hidden="true"
+                                ></i>
+                                <p class="empty-message">Cloud Integrations</p>
+                                <p class="empty-description">
+                                    Configure cloud provider integrations for
+                                    asset discovery
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <p class="footer-text">
+                    Continous Monitoring Dashboard for FedRAMP/GovRAMP/TX-RAMP
+                    <span class="footer-separator">|</span>
+                    <span>Last updated: Not connected</span>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create New POA&amp;M</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/main.css" />
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <i
+                            class="fas fa-shield-alt logo-icon"
+                            aria-hidden="true"
+                        ></i>
+                        <h1 class="logo-text">Continuous Monitoring</h1>
+                    </div>
+                    <nav
+                        class="nav-links"
+                        role="navigation"
+                        aria-label="Main navigation"
+                    >
+                        <a href="index.html" class="nav-link">
+                            <i
+                                class="fas fa-tachometer-alt"
+                                aria-hidden="true"
+                            ></i>
+                            Dashboard
+                        </a>
+                        <a href="assets.html" class="nav-link">
+                            <i class="fas fa-server" aria-hidden="true"></i>
+                            Assets
+                        </a>
+                        <a href="vulnerabilities.html" class="nav-link">
+                            <i class="fas fa-bug" aria-hidden="true"></i>
+                            Vulnerabilities
+                        </a>
+                        <a
+                            href="poam.html"
+                            class="nav-link active"
+                            aria-current="page"
+                        >
+                            <i class="fas fa-tasks" aria-hidden="true"></i>
+                            POA&amp;M
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" role="main">
+            <div class="container">
+                <div class="full-page-view">
+                    <div class="page-header">
+                        <div class="page-breadcrumb">
+
+                        </div>
+                        <h1 class="page-title">Create New POA&amp;M</h1>
+                    </div>
+                    <div class="page-content">
+                        <!-- POA&amp;M Sidebar Menu -->
+                        <div class="section-sidebar">
+                            <div class="sidebar-menu">
+                                <h3 class="sidebar-title">POA&amp;M Management</h3>
+                                <nav class="sidebar-nav">
+                                    <a href="poam.html" class="sidebar-link">
+                                        <i
+                                            class="fas fa-tasks"
+                                            aria-hidden="true"
+                                        ></i>
+                                        POA&amp;M Overview
+                                    </a>
+                                    <a
+                                        href="poam-create.html"
+                                        class="sidebar-link active"
+                                    >
+                                        <i
+                                            class="fas fa-plus-circle"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Create New POA&amp;M
+                                    </a>
+                                    <a
+                                        href="poam-milestones.html"
+                                        class="sidebar-link"
+                                    >
+                                        <i
+                                            class="fas fa-flag-checkered"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Milestone Tracking
+                                    </a>
+                                    <a
+                                        href="poam-compliance.html"
+                                        class="sidebar-link"
+                                    >
+                                        <i
+                                            class="fas fa-clipboard-check"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Compliance Mapping
+                                    </a>
+                                    <a
+                                        href="poam-reports.html"
+                                        class="sidebar-link"
+                                    >
+                                        <i
+                                            class="fas fa-file-alt"
+                                            aria-hidden="true"
+                                        ></i>
+                                        POA&amp;M Reports
+                                    </a>
+                                    <a
+                                        href="poam-templates.html"
+                                        class="sidebar-link"
+                                    >
+                                        <i
+                                            class="fas fa-file-copy"
+                                            aria-hidden="true"
+                                        ></i>
+                                        POA&amp;M Templates
+                                    </a>
+                                    <a
+                                        href="poam-approval.html"
+                                        class="sidebar-link"
+                                    >
+                                        <i
+                                            class="fas fa-check-double"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Approval Workflow
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+
+                        <!-- Create POA&amp;M Content -->
+                        <div class="table-container">
+                            <div class="empty-state">
+                                <i
+                                    class="fas fa-plus-circle empty-icon"
+                                    aria-hidden="true"
+                                ></i>
+                                <p class="empty-message">Create New POA&amp;M</p>
+                                <p class="empty-description">
+                                    Create new Plan of Action & Milestones
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <p class="footer-text">
+                    Continous Monitoring Dashboard for FedRAMP/GovRAMP/TX-RAMP
+                    <span class="footer-separator">|</span>
+                    <span>Last updated: Not connected</span>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Asset Inventory</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/main.css" />
+        <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header" role="banner">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <i
+                            class="fas fa-shield-alt logo-icon"
+                            aria-hidden="true"
+                        ></i>
+                        <h1 class="logo-text">Continuous Monitoring</h1>
+                    </div>
+                    <nav
+                        class="nav-links"
+                        role="navigation"
+                        aria-label="Main navigation"
+                    >
+                        <a href="index.html" class="nav-link">
+                            <i
+                                class="fas fa-tachometer-alt"
+                                aria-hidden="true"
+                            ></i>
+                            Dashboard
+                        </a>
+                        <a
+                            href="assets.html"
+                            class="nav-link active"
+                            aria-current="page"
+                        >
+                            <i class="fas fa-server" aria-hidden="true"></i>
+                            Assets
+                        </a>
+                        <a href="vulnerabilities.html" class="nav-link">
+                            <i class="fas fa-bug" aria-hidden="true"></i>
+                            Vulnerabilities
+                        </a>
+                        <a href="poam.html" class="nav-link">
+                            <i class="fas fa-tasks" aria-hidden="true"></i>
+                            POA&amp;M
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content" role="main">
+            <div class="container">
+                <section
+                    class="content-section active"
+                    aria-labelledby="assets-title"
+                >
+                    <div class="section-header">
+                        <h2 id="assets-title" class="section-title">
+                            Asset Inventory
+                        </h2>
+                        <div class="section-actions">
+                            <button class="btn btn-secondary">
+                                <i
+                                    class="fas fa-download"
+                                    aria-hidden="true"
+                                ></i>
+                                Export
+                            </button>
+                            <button class="btn btn-primary" hx-get="/htmx/assets/form" hx-target="#modal-content" hx-swap="innerHTML" onclick="document.getElementById('asset-modal').showModal()">
+                                <i class="fas fa-plus" aria-hidden="true"></i>
+                                Add Asset
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                Scan Assets
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Assets Sidebar Menu -->
+                    <div class="section-sidebar">
+                        <div class="sidebar-menu">
+                            <h3 class="sidebar-title">Asset Management</h3>
+                            <nav class="sidebar-nav">
+                                <a
+                                    href="assets.html"
+                                    class="sidebar-link active"
+                                >
+                                    <i
+                                        class="fas fa-list"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Inventory Overview
+                                </a>
+                                <a
+                                    href="assets-discovery.html"
+                                    class="sidebar-link"
+                                >
+                                    <i
+                                        class="fas fa-search"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Asset Discovery
+                                </a>
+                                <a
+                                    href="assets-compliance.html"
+                                    class="sidebar-link"
+                                >
+                                    <i
+                                        class="fas fa-shield-alt"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Compliance Status
+                                </a>
+                                <a
+                                    href="assets-reports.html"
+                                    class="sidebar-link"
+                                >
+                                    <i
+                                        class="fas fa-chart-bar"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Asset Reports
+                                </a>
+                                <a
+                                    href="assets-integrations.html"
+                                    class="sidebar-link"
+                                >
+                                    <i
+                                        class="fas fa-plug"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Cloud Integrations
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Asset Filters -->
+                    <div class="filters-section">
+                        <div class="filter-group">
+                            <label for="asset-type-filter" class="filter-label"
+                                >Asset Type</label
+                            >
+                            <select
+                                id="asset-type-filter"
+                                class="filter-select"
+                            >
+                                <option value="">All Types</option>
+                                <option value="ec2">EC2 Instances</option>
+                                <option value="rds">RDS Databases</option>
+                                <option value="s3">S3 Buckets</option>
+                                <option value="lambda">Lambda Functions</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="environment-filter" class="filter-label"
+                                >Environment</label
+                            >
+                            <select
+                                id="environment-filter"
+                                class="filter-select"
+                            >
+                                <option value="">All Environments</option>
+                                <option value="production">Production</option>
+                                <option value="staging">Staging</option>
+                                <option value="development">Development</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="compliance-filter" class="filter-label"
+                                >Compliance Status</label
+                            >
+                            <select
+                                id="compliance-filter"
+                                class="filter-select"
+                            >
+                                <option value="">All Status</option>
+                                <option value="compliant">Compliant</option>
+                                <option value="non-compliant">
+                                    Non-Compliant
+                                </option>
+                                <option value="unknown">Unknown</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Assets Table -->
+                    <div class="table-container">
+                        <table
+                            class="data-table"
+                            role="table"
+                            aria-label="Asset inventory"
+                        >
+                            <thead>
+                                <tr>
+                                    <th scope="col">Asset Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Environment</th>
+                                    <th scope="col">Compliance Status</th>
+                                    <th scope="col">Last Scanned</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody hx-get="/htmx/assets/table" hx-trigger="load">
+                                <tr>
+                                    <td colspan="6" class="empty-row">
+                                        <div class="empty-state">
+                                            <i
+                                                class="fas fa-spinner fa-spin empty-icon"
+                                                aria-hidden="true"
+                                            ></i>
+                                            <p class="empty-message">
+                                                Loading assets...
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <p class="footer-text">
+                    Continous Monitoring Dashboard for FedRAMP/GovRAMP/TX-RAMP
+                    <span class="footer-separator">|</span>
+                    <span>Last updated: Not connected</span>
+                </p>
+            </div>
+        </footer>
+
+        <!-- Asset Modal -->
+        <dialog id="asset-modal" class="modal">
+            <div class="modal-content" id="modal-content">
+                <!-- Form will be loaded here by HTMX -->
+                <p>Loading form...</p>
+            </div>
+            <button class="modal-close-btn" onclick="document.getElementById('asset-modal').close()">
+                <i class="fas fa-times"></i>
+            </button>
+        </dialog>
+    </body>
+</html>
